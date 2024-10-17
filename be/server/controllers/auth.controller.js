@@ -14,10 +14,10 @@ async function authController(req, res, next) {
             throw new Error('Signature verification failed');
         } else {
             const address = recoveredAddress.toLowerCase();
-         const user = await  UserModel.findOne({ userAddress: address })
-         if (!user) {
-          const newUser =await UserModel.create({ userAddress: address });
-          console.log("User created successfully", newUser);
+            const user = await UserModel.findOne({ userAddress: address })
+            if (!user) {
+                const newUser = await UserModel.create({ userAddress: address });
+                //   console.log("User created successfully", newUser);
             }
             res.status(200).json({ message: 'Signature verification successful' });
         }
