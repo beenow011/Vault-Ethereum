@@ -23,7 +23,7 @@ export const connectWallet = async () => {
         const res = await axios.post(url, dataSignature);
         console.log("res", res.data);
 
-        const contractAddress = "0x505eCd60a5B09be7149B59a71297533b24f6FB33";
+        const contractAddress = "0x1a46c8E4664b7D42B8deb2b397A2b0756cE2277a";
         // const contractABI = [];
         const contractInstance = new ethers.Contract(contractAddress, contractAbi, signer);
 
